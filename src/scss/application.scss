@@ -1,0 +1,16 @@
+@import '~wolox-equalizer/equalizer';
+
+@import url('https://fonts.googleapis.com/css?family=Encode+Sans:400,700');
+
+@import 'variables/colors';
+@import 'variables/sizes';
+
+@import 'common/texts';
+@import 'common/buttons';
+@import 'common/margins';
+@import 'common/display';
+
+* {
+  color: $black;
+  font-family: 'Encode Sans', sans-serif;
+}
