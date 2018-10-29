@@ -16,6 +16,16 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: () => import(/* webpackChunkName: "dashboard" */ './views/Dashboard.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/LogIn.vue')
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: () => import(/* webpackChunkName: "dashboard" */ './views/SignUp.vue')
     }
   ]
 })
