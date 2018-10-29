@@ -9,7 +9,7 @@
         span.menu-item.text-normal
           | Ingresar
       router-link(to="signup")
-        .sign-up-button.text-normal
+        span.sign-up-button.text-normal
           | Crear cuenta
 </template>
 <script>
