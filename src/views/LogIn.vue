@@ -1,13 +1,16 @@
 <template lang="pug">
   .main-container.row.middle.center
     .info-bar.column.middle.center
-    .log-in-container.column.middle.start
-      span.text-normal
-        | Usuario
-      input.login-input(type="text" placeholder="Nombre de usuario" v-model="user")
-      span.text
-        | Contraseña
-      input.login-input(type="text" placeholder="Contraseña" v-model="password")
+    .log-in-container.column.middle.center
+      .log-in.column.middle.start
+        span.text-big
+          | Usuario
+        input.login-input(type="text" placeholder="Nombre de usuario" v-model="user")
+        span.text-big
+          | Contraseña
+        input.login-input(type="text" placeholder="Contraseña" v-model="password")
+      button.log-in-button
+        | Iniciar sesión
 </template>
 <script>
 export default {
@@ -35,5 +38,13 @@ export default {
 .log-in-container {
   height: 100%;
   width: 100%;
+}
+
+.log-in {
+  margin-bottom: 30px;
+
+  & > * {
+    margin-bottom: 5px;
+  }
 }
 </style>
