@@ -1,9 +1,5 @@
-import Axios, { create } from 'axios'
-
-export function setHeaders (authToken) {
-  Axios.defaults.headers.common['Authorization'] = authToken
-}
+import { create } from 'axios'
 
 export default create({
-  baseURL: process.env.API_BASE_URL
+  baseURL: process.env.VUE_APP_API_BASE_URL
 })
