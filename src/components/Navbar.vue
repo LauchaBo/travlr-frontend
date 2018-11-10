@@ -16,10 +16,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+@import '../scss/variables/sizes';
 @import '../scss/variables/colors';
 
 .navbar {
-  height: 100px;
+  height: $navbar-height;
   background-color: $gray;
   padding: 0 20px;
 }
