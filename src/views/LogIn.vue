@@ -1,26 +1,35 @@
-<template lang="pug">
+<template lang='pug'>
   .main-container.row.middle.center
     .info-bar.column.middle.center
     .log-in-container.column.middle.center
-      .log-in.column.middle.start
+      form.log-in.column.middle.start(@submit.prevent='login' novalidate)
         span.text-big
           | Usuario
-        input.login-input(type="text" placeholder="Nombre de usuario" v-model="user")
+        input.login-input(type='text' placeholder='Nombre de usuario' v-model='user')
         span.text-big
           | Contraseña
-        input.login-input(type="text" placeholder="Contraseña" v-model="password")
-      button.log-in-button
-        | Iniciar sesión
+        input.login-input(type='password' placeholder='Contraseña' v-model='password')
+        button.log-in-button(type='submit')
+          | Iniciar sesión
 </template>
 <script>
+import { login } from '../services/UserService'
+
 export default {
   data: () => ({
     user: '',
     password: ''
-  })
+  }),
+  methods: {
+    login () {
+      login(this.email, this.password).then(response => {
+        this.$router.push({ path: 'dashboard' })
+      })
+    }
+  }
 }
 </script>
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 @import '../scss/variables/colors';
 @import '../scss/variables/sizes';
 
