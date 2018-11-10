@@ -5,10 +5,12 @@
     .menu.row.middle.center.m-right-3
       span.menu-item.text-normal
         | Funcionalidades
-      span.menu-item.text-normal
-        | Ingresar
-      button.sign-up-button.text-normal
-        | Crear cuenta
+      router-link(to="login")
+        span.menu-item.text-normal
+          | Ingresar
+      router-link(to="signup")
+        .sign-up-button.text-normal
+          | Crear cuenta
 </template>
 <script>
 export default {
