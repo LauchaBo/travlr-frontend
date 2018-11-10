@@ -3,18 +3,20 @@
     .info-bar.column.middle.center
     .sign-up-container.column.middle.center
       .sign-up.column.middle.start
-        span.text-normal
+        span.text-big
           | Usuario
         input.login-input(type="text" placeholder="Nombre de usuario" v-model="user")
-        span.text-normal
+        span.text-big
           | E-Mail
         input.login-input(type="text" placeholder="Nombre de usuario" v-model="email")
-        span.text
+        span.text-big
           | Contraseña
         input.login-input(type="text" placeholder="Contraseña" v-model="password1")
-        span.text
+        span.text-big
           | Repita su contraseña
         input.login-input(type="text" placeholder="Contraseña" v-model="password2")
+      button.sign-up-button
+        | Crear cuenta
 </template>
 <script>
 export default {
@@ -44,5 +46,13 @@ export default {
 .sign-up-container {
   height: 100%;
   width: 100%;
+}
+
+.sign-up {
+  margin-bottom: 30px;
+
+  & > * {
+    margin-bottom: 5px;
+  }
 }
 </style>

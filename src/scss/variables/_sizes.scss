@@ -1,2 +1,4 @@
 $navbar-height: 100px;
-$home-height: 600px;
+$home-height: calc(100vh - #{$navbar-height});
+$button-height: 42px;
+

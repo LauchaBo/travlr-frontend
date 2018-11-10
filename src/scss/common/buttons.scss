@@ -1,5 +1,25 @@
-$button-height: 42px;
+@import '../variables/sizes';
+@import '../variables/colors';
+@import '../common/texts.scss';
 
 %button {
-  
+  height: $button-height;
+  background-color: $cornflower-blue;
+  align-items: center;
+  border-radius: 2px;
+  color: $white;
+  display: flex;
+  font-size: 21px;
+  line-height: 31px;
+  font-weight: 600;
+  justify-content: center;
+  box-shadow: 1px 1px 5px 0px $black;
+  padding: 0 10px;
+}
+
+.sign-up-button,
+.log-in-button,
+.group-button,
+.group-go-button {
+  @extend %button;
 }
