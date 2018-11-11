@@ -1,28 +1,33 @@
 <template lang='pug'>
   .main-container.row.middle.center
     .info-bar.column.middle.center
-    .log-in-container.column.middle.center
-      form.log-in.column.middle.start(@submit.prevent='login' novalidate)
+    form.log-in-container.column.middle.center(@submit.prevent='login' novalidate)
+      .log-in.column.middle.start
         span.text-big
           | Usuario
-        input.login-input(type='text' placeholder='Nombre de usuario' v-model='user')
+        input.login-input(type='text' placeholder='Nombre de usuario' v-model='nombre')
         span.text-big
           | Contraseña
         input.login-input(type='password' placeholder='Contraseña' v-model='password')
-        button.log-in-button(type='submit')
-          | Iniciar sesión
+        span.text-big
+          | Email
+        input.login-input(type='email' placeholder='Email' v-model='email')
+      button.log-in-button(type='submit')
+        | Iniciar sesión
 </template>
 <script>
 import { login } from '../services/UserService'
 
 export default {
   data: () => ({
-    user: '',
-    password: ''
+    nombre: '',
+    password: '',
+    email: '',
+    rememberMe: true
   }),
   methods: {
     login () {
-      login(this.email, this.password).then(response => {
+      login(this.nombre, this.password, this.rememberMe, this.email).then(response => {
         this.$router.push({ path: 'dashboard' })
       })
     }

@@ -1,21 +1,21 @@
 <template lang="pug">
   .main-container.row.middle.center
     .info-bar.column.middle.center
-    .sign-up-container.column.middle.center
+    form.sign-up-container.column.middle.center(@submit.prevent='signup' novalidate)
       .sign-up.column.middle.start
         span.text-big
           | Usuario
         input.login-input(type="text" placeholder="Nombre de usuario" v-model="user")
         span.text-big
           | E-Mail
-        input.login-input(type="text" placeholder="Nombre de usuario" v-model="email")
+        input.login-input(type="email" placeholder="Nombre de usuario" v-model="email")
         span.text-big
           | Contraseña
-        input.login-input(type="text" placeholder="Contraseña" v-model="password1")
+        input.login-input(type="password" placeholder="Contraseña" v-model="password1")
         span.text-big
           | Repita su contraseña
-        input.login-input(type="text" placeholder="Contraseña" v-model="password2")
-      button.sign-up-button
+        input.login-input(type="password" placeholder="Contraseña" v-model="password2")
+      button.sign-up-button(type='submit')
         | Crear cuenta
 </template>
 <script>
@@ -25,7 +25,14 @@ export default {
     email: '',
     password1: '',
     password2: ''
-  })
+  }),
+  methods: {
+    signup () {
+      signup(this.user, this.email, this.password1).then(response => {
+        this.$router.push({ path: 'dashboard' })
+      })
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
